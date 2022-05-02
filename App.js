@@ -31,8 +31,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     backgroundColor: "#fff",
-    // paddingLeft: 60,
-    // paddingRight: 60,
   },
   main: {
     backgroundColor: "#696969",

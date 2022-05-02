@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   butt: {
     position: "absolute",
-    top: 570,
+    top: '80%',
     width:"100%",
     padding:20,
    

@@ -18,7 +18,7 @@ function TextComp(props) {
   const [form, setform] = useState(false);
   
   return (
-    <>
+    <View>
       <View style={styles.title}>
         <Icon name="arrow-left" size={20} color="grey" />
         <Text style={{ marginLeft: 10 }}>Washing</Text>
@@ -63,12 +63,12 @@ function TextComp(props) {
       </View>
 
       <View style={styles.cal}>
-        <TextInput>Select Date & Time</TextInput>
+        <Text>Select Date & Time</Text>
         <View style={styles.itemRight}>
           <Icon name="insert-invitation" color={COLORS.white} size={20} />
         </View>
       </View>
-    </>
+    </View>
   );
 }
 

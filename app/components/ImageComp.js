@@ -3,11 +3,11 @@ import { Image, StyleSheet, ImageBackground, View, Text } from "react-native";
 
 function ImageComp(props) {
   return (
-    <>
+    <View>
       <ImageBackground style={styles.background}>
         <Image style={styles.image} source={require("../assets/carwashing.png")} />
       </ImageBackground>
-    </>
+    </View>
   );
 }
 
