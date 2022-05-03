@@ -1,38 +1,36 @@
-import React from "react";
+import React from 'react'
 import {
-  Image,
   StyleSheet,
-  ImageBackground,
   Text,
   Button,
   View,
   TextInput,
-} from "react-native";
-import Icon from "react-native-vector-icons/MaterialIcons";
-import { useState } from "react";
-import AddComp from "./AddComp";
+} from 'react-native'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import { useNavigation } from '@react-navigation/native'
 
-const COLORS = { primary: "#1f145c", white: "#fff" };
+const COLORS = { primary: '#1f145c', white: '#fff' }
 
-function TextComp(props) {
-  const [form, setform] = useState(false);
-  
+function TextComp() {
+ 
+  const navigation = useNavigation()
+
   return (
     <View>
-      <View style={styles.title}>
+      {/* <View style={styles.title}>
         <Icon name="arrow-left" size={20} color="grey" />
         <Text style={{ marginLeft: 10 }}>Washing</Text>
-      </View>
+      </View> */}
 
       <View style={styles.header}>
         <Text>One-Time</Text>
-        <Text style={{ color: "green", fontWeight: "bold" }}>Silver</Text>
+        <Text style={{ color: 'green', fontWeight: 'bold' }}>Silver</Text>
         <Text>Gold</Text>
         <Text>Platinum</Text>
       </View>
 
       <View style={styles.head}>
-        <Text style={{ fontWeight: "bold", fontSize: 20, marginBottom: 5 }}>
+        <Text style={{ fontWeight: 'bold', fontSize: 20, marginBottom: 5 }}>
           What do you get
         </Text>
 
@@ -49,8 +47,8 @@ function TextComp(props) {
         <View style={styles.done}>
           <Icon name="check-circle" color="green" />
           <Text>
-            {" "}
-            Starts from <Text style={{ color: "red" }}>Rs. 699</Text>
+            {' '}
+            Starts from <Text style={{ color: 'red' }}>Rs. 699</Text>
           </Text>
         </View>
       </View>
@@ -58,88 +56,125 @@ function TextComp(props) {
       <View style={styles.item}>
         <Text style={styles.itemText}>Add your Car</Text>
         <View style={styles.itemRight}>
-          <Icon name="add" color={COLORS.white} size={15}  />
+          <Button
+            color={'white'}
+            title={
+              <Icon
+                name="plus-circle"
+                color={'green'}
+                style={{ fontSize: '150%' }}
+                onPress={() => navigation.navigate('Add')}
+              />
+            }
+          />
         </View>
       </View>
 
+      <Text style={styles.text}>
+        Select a preferred date {'&'} time for exterior
+      </Text>
       <View style={styles.cal}>
-        <Text>Select Date & Time</Text>
+        <TextInput
+          style={styles.textInput}
+          placeholder="Select Date & Time"
+          name="val"
+          type='date'
+          // value={date.val}
+          // onChange={handlechange}
+        />
         <View style={styles.itemRight}>
-          <Icon name="insert-invitation" color={COLORS.white} size={20} />
+          <Icon name="calendar" color={'green'} style={{ fontSize: '150%' }} />
         </View>
       </View>
     </View>
-  );
+  )
 }
 
 const styles = StyleSheet.create({
-  title: {
-    padding: 10,
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    width: "100%",
-    borderBottomColor: "black",
-    // borderStyle: "solid black",
-    fontWeight: "900",
-    borderBottomWidth: 1,
-    borderColor: "lightgrey",
-  },
+  // title: {
+  //   padding: 10,
+  //   flexDirection: 'row',
+  //   justifyContent: 'flex-start',
+  //   width: '100%',
+  //   borderBottomColor: 'black',
+  //   // borderStyle: "solid black",
+  //   fontWeight: '900',
+  //   borderBottomWidth: 1,
+  //   borderColor: 'lightgrey',
+  // },
   header: {
-    display: "flex",
-    justifyContent: "space-between",
-    flexDirection: "row",
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
     borderBottomWidth: 1,
-    borderColor: "grey",
-    margin: 20,
-    fontWeight: "bold",
-    marginBottom: "180%",
+    borderColor: '#D3D3D3',
+    margin: '5%',
+    fontWeight: 'bold',
+    marginBottom: '180%',
   },
   head: {
-    position: "absolute",
-    top: "37%",
-    width: "100%",
-    padding: "5%",
+    position: 'absolute',
+    top: '37%',
+    width: '100%',
+    padding: '5%',
   },
   done: {
-    flexDirection: "row",
+    flexDirection: 'row',
     padding: 3,
   },
   item: {
-    backgroundColor: "lightblue",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: "55%",
-    padding: 5,
-    marginLeft: "5%",
-    width: "90%",
-    height: "8%",
+    shadowColor: '#D3D3D3',
+    shadowOpacity: 2,
+    shadowRadius: 4,
+    shadowOffset: {
+      height: 1,
+      width: 1,
+    },
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    position: 'absolute',
+    top: '58%',
+    padding: '2%',
+    marginLeft: '5%',
+    width: '90%',
+    height: '7%',
   },
   itemRight: {
-    backgroundColor: "blue",
-    borderRadius: 25,
     elevation: 30,
-    height: "60%",
-    width: "10%",
-    justifyContent: "center",
-    alignItems: "center",
+    height: '60%',
+    width: '10%',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   itemText: {
     fontSize: 20,
   },
   cal: {
-    backgroundColor: "lightblue",
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    position: "absolute",
-    top: "65%",
-    padding: "1.5%",
-    marginLeft: 20,
-    width: "90%",
-    height: 60,
+    shadowColor: '#D3D3D3',
+    shadowOpacity: 2,
+    shadowRadius: 4,
+    shadowOffset: {
+      height: 1,
+      width: 1,
+    },
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    position: 'absolute',
+    top: '73%',
+    padding: '2%',
+    marginLeft: '5vw',
+    width: '90%',
+    height: '7vh',
   },
-});
+  text: {
+    position: 'absolute',
+    marginTop: '130%',
+    marginLeft: '5%',
+    fontWeight: '5%',
+    fontSize: '5vw',
+  },
+})
 
-export default TextComp;
+export default TextComp
