@@ -38,7 +38,7 @@ export default function Cart(props) {
           },
         }}
       >
-        Subscription Package : Silver
+        <Text>Subscription Package : Silver</Text>
       </View>
 
       <View
@@ -69,8 +69,8 @@ export default function Cart(props) {
         <Text>Add Address</Text>
         <Icon name="plus-circle" color={'green'} style={{ fontSize: '100%' }} />
       </View>
-      <View style={styles.view}>Apply Coupon</View>
-      <View style={styles.money}>Use Money From Wallet</View>
+      <View style={styles.view}><Text>Apply Coupon</Text></View>
+      <View style={styles.money}><Text>Use Money From Wallet</Text></View>
       <View style={{ margin: 20, marginTop: -5 }}>
         <table>
           <tbody>
